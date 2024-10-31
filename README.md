@@ -4,6 +4,8 @@
 
 目前在cocos creator 3.8.4上测试通过
 
+![example](example.png "example")
+
 ## Usage
 ```bash
 # 安装依赖模块
