@@ -93,6 +93,17 @@ export class Wallet {
         return JSON.parse(Buffer.from(res.result).toString());
     };
 
+    viewAccount = async (accountId) => {
+        const url = this.rpcURL;
+        const provider = new providers.JsonRpcProvider({ url });
+        let res = await provider.query({
+            request_type: 'view_account',
+            account_id: accountId,
+            finality: 'final',
+        });
+        return res;
+    };
+
 
     /**
      * Makes a call to a contract
