@@ -2,6 +2,9 @@ import { setupWalletSelector } from "@near-wallet-selector/core";
 import { setupModal } from "@near-wallet-selector/modal-ui-js";
 import { setupMyNearWallet } from "@near-wallet-selector/my-near-wallet";
 import { setupHereWallet } from "@near-wallet-selector/here-wallet";
+import { setupMeteorWallet } from "@near-wallet-selector/meteor-wallet";
+import { setupOKXWallet } from "@near-wallet-selector/okx-wallet";
+import { setupBitgetWallet } from "@near-wallet-selector/bitget-wallet";
 import { providers } from "near-api-js";
 import '@near-wallet-selector/modal-ui/styles.css';
 
@@ -36,10 +39,10 @@ export class Wallet {
      * @returns {Promise<string>} - the accountId of the signed-in user 
      */
     startUp = async (accountChangeHook) => {
-        console.log("accountChangeHook", accountChangeHook)
+        console.log("accountChangeHook: ", accountChangeHook)
         this.selector = setupWalletSelector({
             network: this.networkId,
-            modules: [setupMyNearWallet(), setupHereWallet()]
+            modules: [setupOKXWallet(), setupBitgetWallet(), setupMeteorWallet(), setupMyNearWallet(), setupHereWallet()]
         });
 
         const walletSelector = await this.selector;

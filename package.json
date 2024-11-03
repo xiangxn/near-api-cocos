@@ -8,7 +8,10 @@
   "devDependencies": {
     "@babel/core": "^7.26.0",
     "@babel/preset-env": "^7.26.0",
+    "@near-wallet-selector/bitget-wallet": "^8.9.14",
+    "@near-wallet-selector/meteor-wallet": "^8.9.14",
     "@near-wallet-selector/modal-ui": "^8.9.14",
+    "@near-wallet-selector/okx-wallet": "^8.9.14",
     "babel-loader": "^9.2.1",
     "buffer": "^6.0.3",
     "crypto-browserify": "^3.12.1",
