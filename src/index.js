@@ -11,7 +11,8 @@ import '@near-wallet-selector/modal-ui/styles.css';
 const THIRTY_TGAS = '30000000000000';
 const NO_DEPOSIT = '0';
 
-export * from "@near-js/utils"
+export * from "@near-js/utils";
+export { createHash, createHmac } from 'crypto';
 
 export class Wallet {
     /**
