@@ -28,7 +28,8 @@ export class Wallet {
     constructor({ networkId = 'testnet', createAccessKeyFor = undefined, rpcURL = undefined }) {
         this.createAccessKeyFor = createAccessKeyFor;
         this.networkId = networkId;
-        this.rpcURL = `https://rpc.${this.networkId}.near.org`;
+        // this.rpcURL = `https://rpc.${this.networkId}.near.org`;
+        this.rpcURL = `https://rpc.${this.networkId}.pagoda.co`;
         if (rpcURL !== undefined && rpcURL != null) {
             this.rpcURL = rpcURL;
         }
