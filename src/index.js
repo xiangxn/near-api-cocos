@@ -73,7 +73,9 @@ export class Wallet {
      */
     signOut = async () => {
         const selectedWallet = await (await this.selector).wallet();
-        selectedWallet.signOut();
+        await selectedWallet.signOut().catch(err => {
+            console.log("signOut:", err);
+        });
     };
 
     /**
@@ -94,6 +96,8 @@ export class Wallet {
             method_name: method,
             args_base64: Buffer.from(JSON.stringify(args)).toString('base64'),
             finality: 'optimistic',
+        }).catch(err => {
+            console.log("viewMethod:", err);
         });
         return JSON.parse(Buffer.from(res.result).toString());
     };
@@ -105,6 +109,8 @@ export class Wallet {
             request_type: 'view_account',
             account_id: accountId,
             finality: 'final',
+        }).catch(err => {
+            console.log("viewAccount:", err);
         });
         return res;
     };
@@ -136,6 +142,8 @@ export class Wallet {
                     },
                 },
             ],
+        }).catch(err => {
+            console.log("callMethod:", err);
         });
 
         return providers.getTransactionLastResult(outcome);
