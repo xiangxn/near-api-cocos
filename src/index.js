@@ -11,8 +11,10 @@ import '@near-wallet-selector/modal-ui/styles.css';
 const THIRTY_TGAS = '30000000000000';
 const NO_DEPOSIT = '0';
 
-export * from "@near-js/utils";
-export { createHash, createHmac } from 'crypto';
+import { formatNearAmount, parseNearAmount } from "@near-js/utils";
+import { createHash, createHmac } from 'crypto';
+
+export { createHash, createHmac, formatNearAmount, parseNearAmount };
 
 export class Wallet {
     /**
@@ -163,3 +165,9 @@ export class Wallet {
         return providers.getTransactionLastResult(transaction);
     };
 }
+
+window.nearAPI = {
+    Wallet,
+    createHash, createHmac,
+    formatNearAmount, parseNearAmount
+};
