@@ -1,21 +1,21 @@
 # Near-api-cocos
 
-一个融合了Near基础api和near-wallet-selector的封装库，主要用于cocos creator。
+A package library that combines Near basic api and near-wallet-selector, mainly used in cocos creator.
 
-目前在cocos creator 3.8.4上测试通过
+Currently tested on cocos creator 3.8.4
 
 ![example](example.png "example")
 
 ## Usage
 ```bash
-# 安装依赖模块
+# Install dependent modules
 npm i
 
-# 编译
+# Compile
 npm run build
 ```
 
-编译完成后将dist目录的```near-api-cocos.min.js```作为模块导入到cocos creator中，然后在代码中如下编写：
+After the compilation is complete, import the ```near-api-cocos.min.js``` in the dist directory as a module into the cocos creator, and then write the following in the code:
 ```
 import { _decorator, Component, Node } from 'cc';
 import nearAPI from "./near-api-cocos.min.js";
